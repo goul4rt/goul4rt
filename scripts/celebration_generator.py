@@ -112,7 +112,77 @@ CELEBRATIONS = {
         'theme': 'radical',
         'gif_url': 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXZxZmZ1ZnJ5bnV5OGNkb3NjdnN5bnl5ZnJ5Y3lmcnlmcnlmcnlmcnkmZXA9djFfaW50ZXJuYWxfZ2lmX2J5X2lkJmN0PWc/l0MYt5jPR6QX5pnqM/giphy.gif',
         'footer': '\n\n<div align="center">\n  <h3>🎊 Happy Carnival! 🎊</h3>\n  <p>Enjoy, Dance, Code! 🎭</p>\n</div>\n'
-    }
+    },
+    'sao_joao': {
+        'dates': [(6, 23), (6, 24)],
+        'header': '🌽🔥 <h3 align="center">Happy São João! 🎆🪗</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🎵 Let\'s code to the sound of forró! 🎵</h4></div>',
+        'theme': 'solarized-dark',
+        'gif_url': 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjBpY3RtdHc0czJwaWNtdzNmMTZqemNydW91NjJpaXpnanA0NGY1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/geALIfiLlUqnSYn0xf/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>🌽 Code Party! 🌽</h3>\n  <p>May your bugs be few and your firework be big! 🔥</p>\n</div>\n'
+    },
+    'star_wars': {
+        'dates': [(5, 4)],
+        'header': '⚔️🌌 <h3 align="center">May the 4th be with you! 🚀✨</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🌟 May the Force be with your code! 🌟</h4></div>',
+        'theme': 'midnight-purple',
+        'gif_url': 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHJ2ZGduYWt6MnZlaDlsYnJta3ZuZDltdmJxODAwY25iYWJlZng3dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vClpSH8XE4Kv7kYXm4/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>⚔️ May the 4th! ⚔️</h3>\n  <p>Do or do not. There is no try. - Yoda 🐸</p>\n</div>\n'
+    },
+    'pi_day': {
+        'dates': [(3, 14)],
+        'header': '🥧🔢 <h3 align="center">Happy Pi Day! π = 3.14159...</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🎯 Celebrating math and programming! 🎯</h4></div>',
+        'theme': 'algolia',
+        'gif_url': 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnhkeHVoMG0zbXk0YTc1cWVqemwyM3Uyb3BlZ2Mzc2Z4MW9vaXVybyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abqjEIIzjz8O9kQ/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>π Pi Day π</h3>\n  <p>3.14159265358979323846... 🥧</p>\n</div>\n'
+    },
+    'grace_hopper': {
+        'dates': [(12, 9)],
+        'header': '👩‍💻🎂 <h3 align="center">Happy Birthday Grace Hopper! 🌟</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>💻 Celebrating a programming pioneer! 💻</h4></div>',
+        'theme': 'onedark',
+        'gif_url': 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDNwejljaXkzdzUya2JpMjllazY5M3p5cndoM3poeTJuNmtvOGh1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l378eVk7KxCOuJfPO/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>👩‍💻 Grace Hopper Day 👩‍💻</h3>\n  <p>"The most dangerous phrase: We\'ve always done it this way" 💡</p>\n</div>\n'
+    },
+    'video_game_day': {
+        'dates': [(8, 29)],
+        'header': '🎮🕹️ <h3 align="center">Happy Video Game Day! 👾🏆</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🎯 Game On! 🎯</h4></div>',
+        'theme': 'dracula',
+        'gif_url': 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjU0N3F1ZzdkY3FscmU5Zndmc25hNnlpaXhneWw0N3hkbmVyaXcxMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/w9caYWTMGjZWU/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>🎮 Game Day! 🎮</h3>\n  <p>Pause the game and push the code! 🕹️</p>\n</div>\n'
+    },
+    'valentines': {
+        'dates': [(2, 14)],
+        'header': '💘💗 <h3 align="center">Happy Valentine\'s Day! 💝💖</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>💕 Spread the love! 💕</h4></div>',
+        'theme': 'buefy',
+        'gif_url': 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2d6eXg2MGFyenJjYW4zYjdkMjZ2M2x4bWlxNmN4Y3J6NjNwZDJ5NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7k3ThwwMXnHCE/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>💖 Valentine\'s Day! 💖</h3>\n  <p>console.log("I ❤️ code!") 💻</p>\n</div>\n'
+    },
+    'april_fools': {
+        'dates': [(4, 1)],
+        'header': '🤡😜 <h3 align="center">April Fools Day! 🎪🃏</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🎭 Is this profile real? 🤔</h4></div>',
+        'theme': 'radical',
+        'gif_url': 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnphZTVhZXh3NTdydmdjMHlzeXBnNTVjOHQ1YWVpMXM2OXM3MXUybyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3osxY5p129OPafgkw0/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>🤡 Happy April Fools! 🤡</h3>\n  <p>// TODO: Fix bugs (Just kidding, they\'re features!) </p>\n</div>\n'
+    },
+    'towel_day': {
+        'dates': [(5, 25)],
+        'header': '🔭🌌 <h3 align="center">Towel Day! Don\'t Panic! 🚀</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🌟 The Answer is 42! 🌟</h4></div>',
+        'theme': 'cobalt',
+        'gif_url': 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdm91bGRpbjE4cDhjaG9iNHFubWs3ejl1NTA4M2d1dHEzMTlwNXkwdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Wj41AdDUSiPK0/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>🚀 Don\'t Panic! 🚀</h3>\n  <p>Always know where your towel is! 🧖</p>\n</div>\n'
+    },
+    'back_future': {
+        'dates': [(10, 21)],
+        'header': '⚡🚗 <h3 align="center">Back to the Future Day! 🕐⏰</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🌟 Where we\'re going, we don\'t need roads! 🌟</h4></div>',
+        'theme': 'synthwave',
+        'gif_url': 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJxdDRncmIweWRjcDF2enBtMjU3aG4xZHdsM2YyMjA1a2t2bXRxYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Y7XaQbkGZ7lLB1yvzq/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>⚡ 1.21 Gigawatts! ⚡</h3>\n  <p>Great Scott! The code is working! 🚀</p>\n</div>\n'
+    },
+    'earth_day': {
+        'dates': [(4, 22)],
+        'header': '🌍🌱 <h3 align="center">Earth Day! 🌳🌿</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>♻️ Coding for a sustainable future! ♻️</h4></div>',
+        'theme': 'apprentice',
+        'gif_url': 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmxnOXlxeGZ6OGdveGx2M2ZkcWFobGtkdXVkbHJ4NmNvbGh0dXpnbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1KVcrdl7rJpFnY2s/giphy.gif',
+        'footer': '\n\n<div align="center">\n  <h3>🌍 Save the Planet! 🌍</h3>\n  <p>Green code for a green world! 🌱</p>\n</div>\n'
+    },
 }
 
 # Tema e GIF padrão
