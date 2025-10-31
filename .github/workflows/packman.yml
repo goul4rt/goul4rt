@@ -15,16 +15,144 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
-      - name: generate pacman-contribution-graph.svg
-        uses: abozanona/pacman-contribution-graph@main
+      # 1. Checkout do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
-          github_user_name: ${{ github.repository_owner }}
+          fetch-depth: 0
 
+      # 2. Setup Python para detectar tema
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-      - name: push pacman-contribution-graph.svg to the output branch
+      # 3. Detecta tema atual baseado na data
+      - name: Detect current celebration theme
+        id: theme
+        run: |
+          echo "🎨 Detectando tema atual..."
+          python3 scripts/pacman_theme_generator.py
+          
+          # Extrai o nome do tema do JSON
+          THEME=$(python3 -c "import json; data=json.load(open('scripts/pacman_theme.json')); print(data['celebration'])")
+          DESCRIPTION=$(python3 -c "import json; data=json.load(open('scripts/pacman_theme.json')); print(data['theme']['description'])")
+          
+          echo "current_theme=$THEME" >> $GITHUB_OUTPUT
+          echo "theme_description=$DESCRIPTION" >> $GITHUB_OUTPUT
+          
+          echo "✅ Tema detectado: $THEME"
+          echo "📝 $DESCRIPTION"
+          
+          # Salva info do tema para uso posterior
+          cat scripts/pacman_theme.json
+
+      # 4. Clone e customiza Pacman automaticamente
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Clone and customize Pacman
+        run: |
+          echo "📦 Clonando repositório do Pacman..."
+          git clone --depth 1 https://github.com/abozanona/pacman-contribution-graph.git temp_pacman
+          
+          echo "🎨 Aplicando tema customizado: ${{ steps.theme.outputs.current_theme }}"
+          python3 scripts/custom_pacman_generator.py ${{ steps.theme.outputs.current_theme }}
+          
+          echo "✅ Tema aplicado com sucesso!"
+
+      # 5. Build da biblioteca customizada
+      - name: Build custom Pacman library
+        working-directory: temp_pacman
+        run: |
+          echo "📦 Instalando dependências..."
+          npm install --silent
+          
+          echo "🔨 Buildando biblioteca..."
+          npm run build
+          
+          echo "✅ Build concluído!"
+
+      # 6. Build da GitHub Action customizada
+      - name: Build custom GitHub Action
+        working-directory: temp_pacman/github-action
+        run: |
+          echo "📦 Instalando dependências da action..."
+          npm install --silent
+          
+          echo "🔨 Buildando action..."
+          npm run build
+          
+          echo "✅ Action pronta!"
+
+      # 7. Gera SVG com tema customizado
+      - name: Generate custom themed Pacman SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          INPUT_GITHUB_USER_NAME: ${{ github.repository_owner }}
+          INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🎮 Gerando Pacman com tema: ${{ steps.theme.outputs.current_theme }}"
+          echo "📝 ${{ steps.theme.outputs.theme_description }}"
+          echo "👤 Usuário: ${{ github.repository_owner }}"
+          echo ""
+          
+          cd temp_pacman/github-action
+          node dist/index.js
+        continue-on-error: true
+
+      # 8. Copia SVGs gerados
+      - name: Copy generated SVGs
+        run: |
+          mkdir -p dist
+          
+          if [ -f temp_pacman/github-action/dist/pacman-contribution-graph.svg ]; then
+            cp temp_pacman/github-action/dist/pacman-contribution-graph.svg dist/
+            echo "✅ SVG light copiado"
+          fi
+          
+          if [ -f temp_pacman/github-action/dist/pacman-contribution-graph-dark.svg ]; then
+            cp temp_pacman/github-action/dist/pacman-contribution-graph-dark.svg dist/
+            echo "✅ SVG dark copiado"
+          fi
+          
+          # Fallback: tenta copiar de temp_pacman/dist/
+          if [ ! -f dist/pacman-contribution-graph.svg ] && [ -f temp_pacman/dist/pacman-contribution-graph.svg ]; then
+            cp temp_pacman/dist/*.svg dist/ 2>/dev/null || true
+            echo "✅ SVGs copiados do dist alternativo"
+          fi
+          
+          echo "📊 SVGs gerados:"
+          ls -lh dist/*.svg 2>/dev/null || echo "⚠️  Nenhum SVG encontrado"
+
+      # 9. Log de sucesso
+      - name: Success log
+        run: |
+          echo ""
+          echo "═══════════════════════════════════════════════"
+          echo "🎉 PACMAN GERADO COM SUCESSO!"
+          echo "═══════════════════════════════════════════════"
+          echo "🎨 Tema: ${{ steps.theme.outputs.current_theme }}"
+          echo "📝 ${{ steps.theme.outputs.theme_description }}"
+          echo "📅 Data: $(date '+%d/%m/%Y')"
+          echo "═══════════════════════════════════════════════"
+          echo ""
+
+      # 10. Cleanup
+      - name: Cleanup
+        if: always()
+        run: |
+          rm -rf temp_pacman
+          echo "🧹 Limpeza concluída"
+
+      # 6. Push do SVG gerado para branch output
+      - name: Push pacman-contribution-graph.svg to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
