@@ -156,20 +156,66 @@ def generate_custom_action(pacman_source_path, theme_name):
     # Lê o arquivo
     content = action_src.read_text(encoding='utf-8')
     
-    # Substitui os temas hardcoded
+    # Cria código para ler o tema dinamicamente
+    dynamic_theme_code = '''
+	// Detecta tema automaticamente do pacman_theme.json
+	let detectedTheme = "github-dark";
+	try {
+		const fs = require('fs');
+		const path = require('path');
+		const themeFile = path.join(__dirname, '../../scripts/pacman_theme.json');
+		if (fs.existsSync(themeFile)) {
+			const themeData = JSON.parse(fs.readFileSync(themeFile, 'utf8'));
+			detectedTheme = themeData.celebration || "github-dark";
+			console.log(`🎨 Tema detectado automaticamente: ${detectedTheme}`);
+			console.log(`📝 ${themeData.theme.description}`);
+		} else {
+			console.log('⚠️  Tema não encontrado, usando github-dark');
+		}
+	} catch (error) {
+		console.log('⚠️  Erro ao detectar tema, usando github-dark:', error.message);
+	}
+'''
+    
+    # Verifica se já tem o código de detecção
+    if 'Detecta tema automaticamente' in content:
+        print(f"ℹ️  Detecção de tema já configurada")
+        return True
+    
+    # Procura por onde inserir (antes de gerar os SVGs)
+    insert_position = content.find("svgContent = await generateSvg")
+    
+    if insert_position == -1:
+        print(f"❌ Não foi possível encontrar onde inserir código de detecção")
+        return False
+    
+    # Insere o código de detecção antes da geração
+    # Volta para o início da linha
+    while insert_position > 0 and content[insert_position - 1] != '\n':
+        insert_position -= 1
+    
+    content = content[:insert_position] + dynamic_theme_code + '\n' + content[insert_position:]
+    
+    # Substitui os temas hardcoded por detectedTheme
     content = content.replace(
         'svgContent = await generateSvg(userName, githubToken, "github", playerStyle)',
-        f'svgContent = await generateSvg(userName, githubToken, "{theme_name}", playerStyle)'
+        'svgContent = await generateSvg(userName, githubToken, detectedTheme, playerStyle)'
     )
     
     content = content.replace(
         'svgContent = await generateSvg(userName, githubToken, "github-dark", playerStyle)',
-        f'svgContent = await generateSvg(userName, githubToken, "{theme_name}", playerStyle)'
+        'svgContent = await generateSvg(userName, githubToken, detectedTheme, playerStyle)'
+    )
+    
+    # Também substitui qualquer tema hardcoded específico
+    content = content.replace(
+        f'svgContent = await generateSvg(userName, githubToken, "{theme_name}", playerStyle)',
+        'svgContent = await generateSvg(userName, githubToken, detectedTheme, playerStyle)'
     )
     
     # Escreve de volta
     action_src.write_text(content, encoding='utf-8')
-    print(f"✅ Action configurada para usar tema '{theme_name}'")
+    print(f"✅ Action configurada para detectar tema automaticamente")
     return True
 
 

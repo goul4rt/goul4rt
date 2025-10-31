@@ -1,0 +1,100 @@
+name: Generate pacman animation (Custom Themes)
+
+# Este é um exemplo de workflow que usa temas customizados
+# Para usar:
+# 1. Faça fork de abozanona/pacman-contribution-graph
+# 2. Aplique os temas: python3 scripts/custom_pacman_generator.py
+# 3. Faça commit no seu fork
+# 4. Renomeie este arquivo para packman-custom.yml
+# 5. Substitua 'SEU_USUARIO' pelo seu usuário do GitHub
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Todo dia à meia-noite
+
+  workflow_dispatch:
+
+  push:
+    branches:
+    - main
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # 1. Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # 2. Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # 3. Detecta tema atual
+      - name: Detect celebration theme
+        id: theme
+        run: |
+          echo "🎨 Detectando tema de celebração..."
+          python3 scripts/pacman_theme_generator.py
+          
+          THEME=$(python3 -c "import json; data=json.load(open('scripts/pacman_theme.json')); print(data['celebration'])")
+          DESCRIPTION=$(python3 -c "import json; data=json.load(open('scripts/pacman_theme.json')); print(data['theme']['description'])")
+          DATE=$(python3 -c "import json; data=json.load(open('scripts/pacman_theme.json')); print(data['date'])")
+          
+          echo "current_theme=$THEME" >> $GITHUB_OUTPUT
+          echo "theme_description=$DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "current_date=$DATE" >> $GITHUB_OUTPUT
+          
+          echo "✅ Tema: $THEME"
+          echo "📝 $DESCRIPTION"
+          echo "📅 Data: $DATE"
+
+      # 4. Gera Pacman com SEU FORK customizado
+      # IMPORTANTE: Substitua 'SEU_USUARIO' pelo seu usuário do GitHub
+      - name: Generate custom pacman
+        uses: SEU_USUARIO/pacman-contribution-graph@main
+        # Exemplo: goul4rt/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
+
+      # 5. Log de sucesso
+      - name: Success log
+        run: |
+          echo "🎉 Pacman gerado com sucesso!"
+          echo "🎨 Tema: ${{ steps.theme.outputs.current_theme }}"
+          echo "📝 ${{ steps.theme.outputs.theme_description }}"
+          echo "📅 Data: ${{ steps.theme.outputs.current_date }}"
+
+      # 6. Push para branch output
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 7. Criar tag com o tema usado (opcional)
+      - name: Create theme tag
+        if: steps.theme.outputs.current_theme != 'default'
+        run: |
+          THEME="${{ steps.theme.outputs.current_theme }}"
+          DATE=$(date +%Y%m%d)
+          TAG="theme-${THEME}-${DATE}"
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Cria tag leve (não faz push para não poluir)
+          git tag -f "latest-theme-${THEME}" || true
+          
+          echo "🏷️  Tag criada: latest-theme-${THEME}"
+

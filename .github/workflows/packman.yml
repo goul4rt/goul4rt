@@ -64,6 +64,10 @@ jobs:
           echo "🎨 Aplicando tema customizado: ${{ steps.theme.outputs.current_theme }}"
           python3 scripts/custom_pacman_generator.py ${{ steps.theme.outputs.current_theme }}
           
+          echo "📋 Copiando pacman_theme.json para action..."
+          mkdir -p temp_pacman/scripts
+          cp scripts/pacman_theme.json temp_pacman/scripts/
+          
           echo "✅ Tema aplicado com sucesso!"
 
       # 5. Build da biblioteca customizada

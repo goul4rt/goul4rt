@@ -1,0 +1,40 @@
+# Pacman temporary directories (downloaded during CI/CD execution)
+temp_pacman/
+temp_pacman_source/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build outputs (for local testing only, CI generates fresh)
+dist/
+build/
+*.egg-info/
+
