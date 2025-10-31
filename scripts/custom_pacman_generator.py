@@ -39,6 +39,42 @@ def generate_typescript_theme(theme_name, theme_data):
     return theme_code
 
 
+def update_types_file(pacman_source_path, theme_name):
+    """Atualiza o arquivo types.ts para incluir o novo tema"""
+    
+    types_file = Path(pacman_source_path) / 'src' / 'types.ts'
+    
+    if not types_file.exists():
+        print(f"⚠️  Arquivo types.ts não encontrado, pulando...")
+        return True
+    
+    content = types_file.read_text(encoding='utf-8')
+    
+    # Procura pela definição de ThemeKeys (várias possíveis ordens)
+    theme_keys_patterns = [
+        "export type ThemeKeys = 'github' | 'github-dark' | 'gitlab' | 'gitlab-dark'",
+        "export type ThemeKeys = 'github' | 'gitlab' | 'github-dark' | 'gitlab-dark'",
+    ]
+    
+    for old_type in theme_keys_patterns:
+        if old_type in content:
+            # Adiciona o novo tema ao tipo
+            new_type = old_type + f" | '{theme_name}'"
+            
+            content = content.replace(old_type, new_type)
+            types_file.write_text(content, encoding='utf-8')
+            print(f"✅ Tipo ThemeKeys atualizado com '{theme_name}'")
+            return True
+    
+    # Verifica se já existe
+    if f"'{theme_name}'" in content:
+        print(f"ℹ️  Tema '{theme_name}' já existe em types.ts")
+        return True
+    
+    print(f"⚠️  Não foi possível atualizar types.ts automaticamente")
+    return True
+
+
 def update_constants_file(pacman_source_path, theme_name, theme_data):
     """Atualiza o arquivo constants.ts com o novo tema"""
     
@@ -50,6 +86,11 @@ def update_constants_file(pacman_source_path, theme_name, theme_data):
     
     # Lê o arquivo original
     content = constants_file.read_text(encoding='utf-8')
+    
+    # Verifica se o tema já existe
+    if f"'{theme_name}':" in content or f'"{theme_name}":' in content:
+        print(f"ℹ️  Tema '{theme_name}' já existe em constants.ts")
+        return True
     
     # Gera o código do novo tema
     new_theme_code = generate_typescript_theme(theme_name, theme_data)
@@ -161,14 +202,20 @@ def main():
     
     print(f"📂 Usando código fonte em: {pacman_source}\n")
     
+    # Atualiza o types.ts primeiro
+    print("1️⃣  Atualizando types.ts...")
+    if not update_types_file(pacman_source, celebration):
+        print("❌ Falha ao atualizar types.ts")
+        return
+    
     # Atualiza o constants.ts
-    print("1️⃣  Atualizando constants.ts...")
+    print("\n2️⃣  Atualizando constants.ts...")
     if not update_constants_file(pacman_source, celebration, theme_data):
         print("❌ Falha ao atualizar constants.ts")
         return
     
     # Atualiza a action
-    print("\n2️⃣  Atualizando GitHub Action...")
+    print("\n3️⃣  Atualizando GitHub Action...")
     if not generate_custom_action(pacman_source, celebration):
         print("❌ Falha ao atualizar action")
         return
