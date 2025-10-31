@@ -83,35 +83,35 @@ CELEBRATIONS = {
         'header': '🎄🎅 <h3 align="center">Merry Christmas! ⛄🎁</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🌟 May your code compile and your bugs be few! 🌟</h4></div>',
         'theme': 'nord',
         'gif_url': 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RxMnpkOXFseGNrbXVtb3V6OGM5eHFlb2FyeDFvMDFqejExMGJzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QaYqakQZPUdUv1YG2a/giphy.gif',
-        'footer': '\n\n<div align="center">\n  <h3>🎄 Feliz Natal! 🎄</h3>\n  <p>Wishing you clean code and successful deployments! 🎅</p>\n</div>\n'
+        'footer': '\n\n<div align="center">\n  <h3>🎄 Merry Christmas! 🎄</h3>\n  <p>Wishing you clean code and successful deployments! 🎅</p>\n</div>\n'
     },
     'ano_novo': {
         'dates': [(1, 1), (12, 31)],  # 31 de dezembro e 1 de janeiro
         'header': '🎆🎊 <h3 align="center">Happy New Year! 🥳🎉</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>✨ New year, new commits, new features! ✨</h4></div>',
         'theme': 'radical',
         'gif_url': 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjIxNTBoN2lmaGZra2dlcGJhanNuaHg0aGYxNzU2ODR6emEwcnpmdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QMkPpxPDYY0fu/giphy.gif',
-        'footer': '\n\n<div align="center">\n  <h3>🎊 Feliz Ano Novo! 🎊</h3>\n  <p>Here\'s to another year of amazing code! 🚀</p>\n</div>\n'
+        'footer': '\n\n<div align="center">\n  <h3>🎊 Happy New Year! 🎊</h3>\n  <p>Here\'s to another year of amazing code! 🚀</p>\n</div>\n'
     },
     'programador': {
         'dates': [(9, 13)],  # 13 de setembro - Dia do Programador
         'header': '💻🚀 <h3 align="center">Happy Programmer\'s Day! 👨‍💻👩‍💻</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🎯 Celebrating the art of coding! 🎯</h4></div>',
         'theme': 'synthwave',
         'gif_url': 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3o2czVqNjdzOTh4cnFidzk2a2Y1ZXZ1OWl3c2N0ZWdlNnpwdWM2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zOvBKUUEERdNm/giphy.gif',
-        'footer': '\n\n<div align="center">\n  <h3>💻 Dia do Programador! 💻</h3>\n  <p>Keep calm and code on! 🚀</p>\n</div>\n'
+        'footer': '\n\n<div align="center">\n  <h3>💻 Programmer\'s Day! 💻</h3>\n  <p>Keep calm and code on! 🚀</p>\n</div>\n'
     },
     'independencia': {
         'dates': [(9, 7)],  # 7 de setembro
         'header': '🇧🇷 <h3 align="center">Independência do Brasil! 🟢🟡</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>💚 Desenvolvendo o futuro do Brasil! 💛</h4></div>',
         'theme': 'chartreuse-dark',
         'gif_url': 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjdjMnJqNW1veTlybjhhOWR1OHFic2U3YjR0eHJiMXJwdWF1cHd5byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1wmOUUYKe1CpOLFjE3/giphy.gif',
-        'footer': '\n\n<div align="center">\n  <h3>🇧🇷 Viva o Brasil! 🇧🇷</h3>\n  <p>Codando com orgulho brasileiro! 💚💛</p>\n</div>\n'
+        'footer': '\n\n<div align="center">\n  <h3>🇧🇷 Independence Day! 🇧🇷</h3>\n  <p>Coding with pride Brazilian! 💚💛</p>\n</div>\n'
     },
     'carnaval': {
         'dates': [(2, 12), (2, 13), (2, 14)],  # Datas aproximadas - variam
-        'header': '🎭🎊 <h3 align="center">Feliz Carnaval! 🎉🎺</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🎵 É hora de codar e sambar! 🎵</h4></div>',
+        'header': '🎭🎊 <h3 align="center">Happy Carnival! 🎉🎺</h3>\n<h3 align="center">Hi there! I\'m Goulart, Mobile Development Specialist</h3>\n<div align="center"><h4>🎵 It\'s time to code and samba! 🎵</h4></div>',
         'theme': 'radical',
         'gif_url': 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXZxZmZ1ZnJ5bnV5OGNkb3NjdnN5bnl5ZnJ5Y3lmcnlmcnlmcnlmcnkmZXA9djFfaW50ZXJuYWxfZ2lmX2J5X2lkJmN0PWc/l0MYt5jPR6QX5pnqM/giphy.gif',
-        'footer': '\n\n<div align="center">\n  <h3>🎊 Aproveite o Carnaval! 🎊</h3>\n  <p>Que seus commits sejam tão animados quanto o Carnaval! 🎭</p>\n</div>\n'
+        'footer': '\n\n<div align="center">\n  <h3>🎊 Happy Carnival! 🎊</h3>\n  <p>Enjoy, Dance, Code! 🎭</p>\n</div>\n'
     }
 }
 
