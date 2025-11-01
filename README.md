@@ -1,17 +1,23 @@
-🎃👻 <h3 align="center">Happy Halloween! 🦇🕷️</h3>
-<h3 align="center">Hi there! I'm Goulart, Mobile Development Specialist</h3>
-<div align="center"><h4>🕸️ Trick or Treat? Let's code some spooky features! 🕸️</h4></div>
+<br clear="both">
+
+<h3 align="center">👋 Hi there! I'm Goulart, Mobile Development Specialist</h3>
 
 ###
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=goul4rt&locale=en&mode=daily&theme=halloween&hide_border=true&border_radius=10" height="180" alt="GitHub Streak" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=goul4rt&layout=compact&theme=halloween&hide_border=true&border_radius=10" height="180" alt="Most Used Languages" />
+  <p>Passionate about creating exceptional mobile experiences and cross-platform solutions</p>
 </div>
 
 ###
 
-<img align="right" height="180" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHM1NTJrYmhhNnlrNnpoa3IyajQxcTNvMWNuMzc2azYxbXB5eGpjZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uHWzPe1dPgkEj2UXZb/giphy.gif" />
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=goul4rt&locale=en&mode=daily&theme=tokyonight&hide_border=true&border_radius=10" height="180" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=goul4rt&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" height="180" alt="Most Used Languages" />
+</div>
+
+###
+
+<img align="right" height="180" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDhsNDM1YWt5OHYzbTVoamRyMW1kZzJncTJobXA2c2Q4Y2VpMXVnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/82nxC1u2BC8VU1wiZq/giphy.gif" />
 
 ###
 
@@ -52,9 +58,3 @@
 </picture>
 
 ###
-
-
-<div align="center">
-  <h3>🎃 Happy Halloween! 🎃</h3>
-  <p>May your code be bug-free and your commits be clean! 👻</p>
-</div>
