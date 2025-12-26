@@ -1,17 +1,23 @@
-🎄🎅 <h3 align="center">Merry Christmas! ⛄🎁</h3>
-<h3 align="center">Hi there! I'm Goulart, Mobile Development Specialist</h3>
-<div align="center"><h4>🌟 May your code compile and your bugs be few! 🌟</h4></div>
+<br clear="both">
+
+<h3 align="center">👋 Hi there! I'm Goulart, Mobile Development Specialist</h3>
 
 ###
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=goul4rt&locale=en&mode=daily&theme=nord&hide_border=true&border_radius=10" height="180" alt="GitHub Streak" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=goul4rt&layout=compact&theme=nord&hide_border=true&border_radius=10" height="180" alt="Most Used Languages" />
+  <p>Passionate about creating exceptional mobile experiences and cross-platform solutions</p>
 </div>
 
 ###
 
-<img align="right" height="180" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RxMnpkOXFseGNrbXVtb3V6OGM5eHFlb2FyeDFvMDFqejExMGJzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QaYqakQZPUdUv1YG2a/giphy.gif" />
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=goul4rt&locale=en&mode=daily&theme=tokyonight&hide_border=true&border_radius=10" height="180" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=goul4rt&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" height="180" alt="Most Used Languages" />
+</div>
+
+###
+
+<img align="right" height="180" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDhsNDM1YWt5OHYzbTVoamRyMW1kZzJncTJobXA2c2Q4Y2VpMXVnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/82nxC1u2BC8VU1wiZq/giphy.gif" />
 
 ###
 
@@ -52,9 +58,3 @@
 </picture>
 
 ###
-
-
-<div align="center">
-  <h3>🎄 Merry Christmas! 🎄</h3>
-  <p>Wishing you clean code and successful deployments! 🎅</p>
-</div>
