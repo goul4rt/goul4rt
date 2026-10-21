@@ -1,23 +1,17 @@
-<br clear="both">
-
-<h3 align="center">👋 Hi there! I'm Goulart, Mobile Development Specialist</h3>
-
-###
-
-<div align="center">
-  <p>Passionate about creating exceptional mobile experiences and cross-platform solutions</p>
-</div>
+⚡🚗 <h3 align="center">Back to the Future Day! 🕐⏰</h3>
+<h3 align="center">Hi there! I'm Goulart, Mobile Development Specialist</h3>
+<div align="center"><h4>🌟 Where we're going, we don't need roads! 🌟</h4></div>
 
 ###
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=goul4rt&locale=en&mode=daily&theme=tokyonight&hide_border=true&border_radius=10" height="180" alt="GitHub Streak" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=goul4rt&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" height="180" alt="Most Used Languages" />
+  <img src="https://streak-stats.demolab.com?user=goul4rt&locale=en&mode=daily&theme=synthwave&hide_border=true&border_radius=10" height="180" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=goul4rt&layout=compact&theme=synthwave&hide_border=true&border_radius=10" height="180" alt="Most Used Languages" />
 </div>
 
 ###
 
-<img align="right" height="180" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDhsNDM1YWt5OHYzbTVoamRyMW1kZzJncTJobXA2c2Q4Y2VpMXVnZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/82nxC1u2BC8VU1wiZq/giphy.gif" />
+<img align="right" height="180" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJxdDRncmIweWRjcDF2enBtMjU3aG4xZHdsM2YyMjA1a2t2bXRxYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Y7XaQbkGZ7lLB1yvzq/giphy.gif" />
 
 ###
 
@@ -58,3 +52,9 @@
 </picture>
 
 ###
+
+
+<div align="center">
+  <h3>⚡ 1.21 Gigawatts! ⚡</h3>
+  <p>Great Scott! The code is working! 🚀</p>
+</div>
